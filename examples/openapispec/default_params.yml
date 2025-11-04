@@ -1,0 +1,6 @@
+/redirect-to:
+  get:
+    query_params:
+      url: "https://httpbin.konghq.com/anything"
+    headers:
+      x-request-internal: "12345"

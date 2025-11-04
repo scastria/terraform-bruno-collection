@@ -1,0 +1,19 @@
+200:
+  group1:
+    /anything:
+      get:
+        -
+          query_params: {}
+      delete:
+        -
+          query_params: {}
+    /redirect-to:
+      get:
+        -
+          query_params:
+            url: 'https://httpbin.konghq.com/anything'
+          headers:
+            x-request-internal: "12345"
+        -
+          query_params:
+            url: 'https://httpbin.konghq.com/spec.json'
