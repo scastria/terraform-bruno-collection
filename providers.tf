@@ -3,7 +3,7 @@ terraform {
   required_providers {
     bruno = {
       source = "scastria/bruno"
-      version = "~> 0.1"
+      version = "~> 0.1.5"
     }
   }
 }
