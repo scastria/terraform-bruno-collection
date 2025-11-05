@@ -26,6 +26,10 @@ resource "bruno_folder" "RequestFolder" {
 resource "bruno_folder" "ParentTestFolder" {
   name = var.automated_tests_folder
   tests = lookup(var.test_scripts, "", [])
+  pre_request_var {
+    key = "is_test"
+    value = "true"
+  }
 }
 resource "bruno_folder" "TestStatusFolder" {
   for_each = var.tests
