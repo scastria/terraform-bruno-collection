@@ -24,4 +24,10 @@ module "openapispec" {
   default_param_values = yamldecode(file("${path.module}/default_params.yml"))
   tests = yamldecode(file("${path.module}/tests.yml"))
   test_scripts = local.test_scripts
+  test_group_vars = {
+    group1 = {
+      client_id = "client_id"
+      client_secret = "client_secret"
+    }
+  }
 }

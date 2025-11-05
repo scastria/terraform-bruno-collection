@@ -55,3 +55,8 @@ variable "tests" {
   description = "Test requests to create in the automated tests folder.  The first key is the status code, the second key is the group name, the third key is the path, the fourth key is the method, then a list of maps of parameter names with values. This allows the same request to be tested more than once with different input parameter sets."
   default = {}
 }
+variable "test_group_vars" {
+  type = map(map(string))
+  description = "Variables to be set on test group folders.  The first key is the group name, the second key is the variable name, and the value is the variable value"
+  default = {}
+}

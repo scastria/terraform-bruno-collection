@@ -41,6 +41,14 @@ resource "bruno_folder" "TestStatusGroupFolder" {
   for_each = toset(local.test_status_group_folders)
   parent_folder_id = bruno_folder.TestStatusFolder[split("--", each.key)[0]].id
   name = split("--", each.key)[1]
+  dynamic "pre_request_var" {
+    for_each = lookup(var.test_group_vars, split("--", each.key)[1], {})
+    iterator = tvar
+    content {
+      key = tvar.key
+      value = tvar.value
+    }
+  }
   tests = lookup(var.test_scripts, "--${split("--", each.key)[0]}--${split("--", each.key)[1]}", [""])
 }
 resource "bruno_folder" "TestRequestFolder" {
