@@ -1,3 +1,3 @@
-pm.test("DELETE /anything: Request status code is 200", () => {
-    pm.response.to.have.status(200);
+test("DELETE /anything: Request status code is 200", function () {
+    expect(res.getStatus()).to.equal(200);
 });

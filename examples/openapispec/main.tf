@@ -8,7 +8,9 @@ terraform {
   }
 }
 
-provider "bruno" {}
+provider "bruno" {
+  collection_path = "/Users/shawncastrianni/GIT/bruno/example"
+}
 
 locals {
   test_scripts = {for f in fileset(path.module, "tests*.js"): regex("tests(?P<path>.*)\\.js", f)["path"] => split("\n", file("${path.module}/${f}"))}
