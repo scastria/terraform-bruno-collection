@@ -4,3 +4,8 @@
       url: "https://httpbin.konghq.com/anything"
     headers:
       x-request-internal: "12345"
+/anything:
+  post:
+    body:
+      fromUnitCode: "km"
+      toUnitCode: "ft"
